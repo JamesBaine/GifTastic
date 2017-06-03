@@ -5,6 +5,93 @@
 	<title>GifTastic</title>
 </head>
 <body>
+	<div id="buttons">
+		<button data-person="dave chappelle">Fuck yo couch</button>
+		<form id="search-form">
+			<label for="search-input">Add</label>
+			<input type="text" id="search-input"><br>
+
+			<input id="add-topic" type="submit" value="Add">
+		</form>
+	
+		
+	</div>
+
+	<div id="gifs-appear-here">
+	</div>
 	
 </body>
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript">
+
+		var topics = ["dave chappelle", "plies"];
+
+		function displayGifs() {
+
+			var topic = $(this).attr("data-person");
+			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+			topic + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+			$.ajax({
+				url: queryURL,
+				method: "GET"
+			})
+			.done(function(response) {
+				var results = response.data;
+
+				for (var i = 0; i < results.length; i++){
+					var gifDiv = $("<div class='item'>");
+
+					var rating = results[i].rating;
+
+					var p = $("<p>").text("Rating: " + rating);
+
+					var personImage = $("<img>");
+					personImage.attr("src", results[i].images.fixed_height.url);
+
+					gifDiv.prepend(p);
+					gifDiv.prepend(personImage);
+
+					$("#gifs-appear-here").prepend(gifDiv);
+				}
+			});
+		}
+
+		$("button").on("click", function() {
+			displayGifs();
+		});
+			
+		
+
+		function renderButtons() {
+
+			$("#buttons").empty();
+
+			for (var i = 0; i < movie.length; i++) {
+
+				var a = $("<button>");
+
+				a.addClass("topic");
+
+				a.attr("data-name", topics[i]);
+
+				a.text(topics[i]);
+
+				$("#buttons").append(a);
+			}
+		}
+
+		$("#add-topic").on("click", function(event) {
+			event.preventDefault();
+
+			var search = $("#search-input").val().trim();
+
+			topics.push(search);
+
+			renderButtons();
+
+		});
+
+		
+	</script>
 </html>
