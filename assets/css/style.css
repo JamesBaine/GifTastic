@@ -1,0 +1,15 @@
+#add-gif {
+	background-color: #4286f4;
+	color: white;
+}
+
+.gif {
+	color: white;
+	background-color: #89b7ff;
+	margin-right: 1em;
+}
+
+#add-gif, .gif {
+	border: none;
+	border-radius: 5px;
+}
