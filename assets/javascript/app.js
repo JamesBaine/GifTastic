@@ -1,11 +1,11 @@
-var gifs = ["rick ross", "migos", "tyler the creator", "dj khaled", "future","lil yachty", "plies", "travis scott", "desiigner", "lil wayne", "quavo" ];
+var gifs = ["rick ross", "action bronson", "migos", "dj khaled", "future","lil yachty", "plies", "travis scott", "desiigner","tyler the creator", "lil wayne", "quavo" ];
 
     function displayGifInfo() {
-      $('#gif-input').text('');
       var person = $(this).attr("data-person");
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=dc6zaTOxFJmzC&limit=10";
       $("#gif-view").empty();
+      
 
 
       $.ajax({
@@ -83,12 +83,18 @@ var gifs = ["rick ross", "migos", "tyler the creator", "dj khaled", "future","li
     $("#add-gif").on("click", function(event) {
       event.preventDefault();
 
+      if ($("#gif-input").val() == ''){
+        return;
+      }
 
       var gif = $("#gif-input").val().trim();
 
       gifs.push(gif);
 
       renderButtons();
+
+      $('#gif-input').val('');
+
 
 
 
