@@ -1,15 +1,26 @@
+body {
+	background-image: url("../images/donuts.png");
+}
+
+.item {
+	display: inline-block;
+	width: 30%;
+	margin-right: 1rem;
+}
+
+.item:nth-child(last){
+	margin-right: 0;
+}
+
+img {
+	width: 100%;
+}
+
+button {
+	background-color: #00edff;
+}
+
 #add-gif {
-	background-color: #4286f4;
-	color: white;
-}
-
-.gif {
-	color: white;
-	background-color: #89b7ff;
-	margin-right: 1em;
-}
-
-#add-gif, .gif {
+	background-color: #ff00ff;
 	border: none;
-	border-radius: 5px;
 }

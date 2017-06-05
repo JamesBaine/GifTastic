@@ -11,22 +11,26 @@
 <body>
 
   <div class="container">
+  
+    <div id="buttons-view" class="navbar navbar-default d-inline-block col-sm-9"></div>
 
-    <div id="buttons-view"></div>
+  
 
-    <form id="gif-form">
-      <label for="gif-input">GifTastic</label>
-      <input type="text" id="gif-input"><br>
+    <div id="side-bar" class="card col-sm-3 float-right">
+      <form id="gif-form" class="card-block">
+        <label for="gif-input">GifTastic</label>
+        <input type="text" class="form-control" id="gif-input"><br>
 
-      <input id="add-gif" type="submit" value="Add a gif">
-    </form>
+        <input id="add-gif" class="btn btn-primary" type="submit" value="Add a gif">
+      </form>
+    </div>
 
-    <div id="gifs-appear-here"></div>
+    <div id="gif-view" class="col-sm-8"></div>
 
   </div>
 
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="assets/javascript/app.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 </script>
 </body>
 
