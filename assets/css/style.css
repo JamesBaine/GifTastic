@@ -1,5 +1,6 @@
 body {
 	background-image: url("../images/donuts.png");
+	font-family: 'Barrio', cursive;
 }
 
 .item {
@@ -16,15 +17,25 @@ img {
 	width: 100%;
 }
 
-button {
-	background-color: #00edff;
+#gif {
+	background-color: #f49bbb;
+}
+
+#gif:hover {
+	color: #53b4f8;
 }
 
 #add-gif {
 	background-color: #53b4f8;
 	border: none;
+	font-family: 'Barrio', cursive;
 }
 
 #add-gif:hover {
+	color:  #f2ec5d;
+
+}
+
+h2 {
 	color: #f49bbb;
 }
