@@ -21,6 +21,10 @@ button {
 }
 
 #add-gif {
-	background-color: #ff00ff;
+	background-color: #53b4f8;
 	border: none;
+}
+
+#add-gif:hover {
+	color: #f49bbb;
 }
