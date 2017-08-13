@@ -1,2 +1,2 @@
 # GifTastic
-UCLA Bootcamp HW 6
+Gif generating web application that uses the giphy api and firebase to generate an array of gifs based on the users input.
